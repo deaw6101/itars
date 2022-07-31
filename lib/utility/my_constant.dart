@@ -7,8 +7,23 @@ class MyConstant {
   static Color light = Colors.orange.shade500;
   static Color active = const Color.fromARGB(255, 255, 0, 191);
   static Color button = Colors.white;
+  static Color bgColor = const Color.fromARGB(255, 0, 162, 255);
 
   // method
+
+  BoxDecoration linearGradient() {
+    return BoxDecoration(
+      gradient: LinearGradient(
+        colors: <Color>[
+          MyConstant.bgColor,
+          MyConstant.button,
+          MyConstant.button,
+        ],
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+      ),
+    );
+  }
 
   BoxDecoration basicBox() {
     return BoxDecoration(color: light.withOpacity(0.4));
@@ -18,7 +33,7 @@ class MyConstant {
     return BoxDecoration(
       gradient: RadialGradient(
           colors: <Color>[button, light],
-          center: Alignment(-0.4, -0.35),
+          center: const Alignment(-0.4, -0.35),
           radius: 1),
     );
   }
@@ -44,6 +59,24 @@ class MyConstant {
       color: primary,
       fontSize: 36,
       fontWeight: FontWeight.w700,
+      fontFamily: 'Kanit',
+    );
+  }
+
+  TextStyle h2WhiteStyle() {
+    return TextStyle(
+      color: button,
+      fontSize: 30,
+      fontWeight: FontWeight.w200,
+      fontFamily: 'Kanit',
+    );
+  }
+
+  TextStyle h2BackStyle() {
+    return TextStyle(
+      color: button,
+      fontSize: 30,
+      fontWeight: FontWeight.w200,
       fontFamily: 'Kanit',
     );
   }
@@ -78,6 +111,15 @@ class MyConstant {
   TextStyle h3Button() {
     return TextStyle(
       color: button,
+      fontSize: 18,
+      fontWeight: FontWeight.w600,
+      fontFamily: 'Kanit',
+    );
+  }
+
+  TextStyle h3Dialog() {
+    return TextStyle(
+      color: primary,
       fontSize: 18,
       fontWeight: FontWeight.w600,
       fontFamily: 'Kanit',
